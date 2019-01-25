@@ -5,7 +5,7 @@
 //! cross-platform support.  Why not give it a hand?
 //!
 //! TODO: All of this.
-
+/*
 use std::fmt;
 
 use gilrs::{Event, Gamepad, Gilrs};
@@ -102,3 +102,4 @@ mod tests {
         assert!(GilrsGamepadContext::new().is_ok());
     }
 }
+*/

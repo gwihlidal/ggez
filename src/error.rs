@@ -9,7 +9,7 @@ use glutin;
 use winit;
 
 use app_dirs2::AppDirsError;
-use gilrs;
+//use gilrs;
 use image;
 use lyon;
 use rodio::decoder::DecoderError;
@@ -223,12 +223,12 @@ impl From<glutin::ContextError> for GameError {
     }
 }
 
-impl From<gilrs::Error> for GameError {
+/*impl From<gilrs::Error> for GameError {
     fn from(s: gilrs::Error) -> GameError {
         let errstr = format!("Gamepad error: {}", s);
         GameError::GamepadError(errstr)
     }
-}
+}*/
 
 impl From<lyon::lyon_tessellation::FillError> for GameError {
     fn from(s: lyon::lyon_tessellation::FillError) -> GameError {

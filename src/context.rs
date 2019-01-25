@@ -11,7 +11,7 @@ use crate::error::GameResult;
 use crate::event::winit_event;
 use crate::filesystem::Filesystem;
 use crate::graphics::{self, Point2};
-use crate::input::{gamepad, keyboard, mouse};
+use crate::input::{/*gamepad,*/ keyboard, mouse};
 use crate::timer;
 
 /// A `Context` is an object that holds on to global resources.
@@ -38,7 +38,7 @@ pub struct Context {
     /// Mouse context
     pub mouse_context: mouse::MouseContext,
     /// Gamepad context
-    pub gamepad_context: Box<dyn gamepad::GamepadContext>,
+    //pub gamepad_context: Box<dyn gamepad::GamepadContext>,
 
     /// The Conf object the Context was created with
     pub conf: conf::Conf,
@@ -81,11 +81,11 @@ impl Context {
         )?;
         let mouse_context = mouse::MouseContext::new();
         let keyboard_context = keyboard::KeyboardContext::new();
-        let gamepad_context: Box<dyn gamepad::GamepadContext> = if conf.modules.gamepad {
+        /*let gamepad_context: Box<dyn gamepad::GamepadContext> = if conf.modules.gamepad {
             Box::new(gamepad::GilrsGamepadContext::new()?)
         } else {
             Box::new(gamepad::NullGamepadContext::default())
-        };
+        };*/
 
         let ctx = Context {
             conf,
@@ -95,7 +95,7 @@ impl Context {
             timer_context,
             audio_context,
             keyboard_context,
-            gamepad_context,
+            //gamepad_context,
             mouse_context,
 
             debug_id,

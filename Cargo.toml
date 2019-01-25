@@ -29,6 +29,7 @@ path = "src/lib.rs"
 bzip2 = ["zip/bzip2"]
 default = ["bzip2"]
 multithread-image-decoding = ["image/hdr", "image/jpeg_rayon"]
+gamepad = ["gilrs"]
 
 [dependencies]
 bitflags = "1.0"
@@ -53,7 +54,7 @@ smart-default = "0.3"
 nalgebra = {version = "0.16", features = ["mint"] }
 # Has to be the same version of mint that nalgebra uses here.
 mint = "0.5"
-gilrs = "0.6"
+gilrs = { version = "0.6", optional = true }
 
 [dev-dependencies]
 chrono = "0.4"
@@ -65,4 +66,3 @@ skeptic = "0.13"
 
 [build-dependencies]
 skeptic = "0.13"
-
